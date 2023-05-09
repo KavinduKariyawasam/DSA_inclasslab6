@@ -23,51 +23,89 @@ struct HashTable{
         }
         return full;
     }
-int hashfunc(string user_name){
-    int sum = 0;
-    int hash = 0;
-
-    // Compute the sum of the ASCII values of the characters in the user name
-    for (int i = 0; i < user_name.length(); i++){
-        sum += (int) user_name[i];
-    }
-
-    // Compute the hash value by taking the sum modulo the maximum length of the password array
-    hash = sum % MAX_LENGTH;
-
-    return hash;
+int hashfunc(string user_name){
+
+    int sum = 0;
+
+    int hash = 0;
+
+
+
+    // Compute the sum of the ASCII values of the characters in the user name
+
+    for (int i = 0; i < user_name.length(); i++){
+
+        sum += (int) user_name[i];
+
+    }
+
+
+
+    // Compute the hash value by taking the sum modulo the maximum length of the password array
+
+    hash = sum % MAX_LENGTH;
+
+
+
+    return hash;
+
 }
 
     bool is_slot_empty(int hash){
         bool empty = password[hash].empty();
         return empty;
     }
-void insert(string user_name,string user_password){
-    int hash;
-    bool empty;
-    hash = hashfunc(user_name);
-    empty = is_slot_empty(hash);
-
-    if(empty){
-        password[hash] = user_password;
-        // cout << "Password inserted for user " << user_name << endl;
-    }
-    else{
-        cout << "Could not insert password for user " << user_name << endl;
-    }
+void insert(string user_name,string user_password){
+
+    int hash;
+
+    bool empty;
+
+    hash = hashfunc(user_name);
+
+    empty = is_slot_empty(hash);
+
+
+
+    if(empty){
+
+        password[hash] = user_password;
+
+        // cout << "Password inserted for user " << user_name << endl;
+
+    }
+
+    else{
+
+        cout << "Could not insert password for user " << user_name << endl;
+
+    }
+
 }
-void hash_lookup(string user_name){
-    int hash;
-    bool empty;
-    hash = hashfunc(user_name);
-    empty = is_slot_empty(hash);
-
-    if(!empty){
-        cout << "The password for user " << user_name << " is " << password[hash] << endl;
-    }
-    else{
-        cout << "No password found for user " << user_name << endl;
-    }
+void hash_lookup(string user_name){
+
+    int hash;
+
+    bool empty;
+
+    hash = hashfunc(user_name);
+
+    empty = is_slot_empty(hash);
+
+
+
+    if(!empty){
+
+        cout << "The password for user " << user_name << " is " << password[hash] << endl;
+
+    }
+
+    else{
+
+        cout << "No password found for user " << user_name << endl;
+
+    }
+
 }
     void delete_item(string user_name){
         int hash;
