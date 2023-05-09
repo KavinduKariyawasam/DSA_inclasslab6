@@ -56,19 +56,32 @@ struct HashTable{
             password[i].print_list();
         }
     }
-void hash_lookup(string user_name){
-        int hash;
-        bool empty;
-        hash = hashfunc(user_name);
-        empty = is_slot_empty(hash);
-	//add your code below
-        if (!empty)
-        {
-            password[hash].search(user_name);
-        } else
-        {
-            cout << "User not found." << endl;
-        }
+void hash_lookup(string user_name){
+
+        int hash;
+
+        bool empty;
+
+        hash = hashfunc(user_name);
+
+        empty = is_slot_empty(hash);
+
+	//add your code below
+
+        if (!empty)
+
+        {
+
+            password[hash].search(user_name);
+
+        } else
+
+        {
+
+            cout << "User not found." << endl;
+
+        }
+
 }
 };
 
