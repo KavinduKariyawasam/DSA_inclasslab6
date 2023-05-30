@@ -21,9 +21,11 @@ void print(int dist[], int src)
     double total = 0;
     cout << "\n" << "Shortest time for each city from city " << src << " are," << "\n" << endl;
 
-	for (int i = 1; i < V; i++){
-        cout << "From city " << src << " to city " << i << " is " << dist[i] << endl;
-        total += dist[i];
+	for (int i = 0; i < V; i++){
+        if (i != src){
+            cout << "From city " << src << " to city " << i << " is " << dist[i] << endl;
+            total += dist[i];
+        }
     }
     cout << "Average time is " << total/(V-1)<< endl;
 }
